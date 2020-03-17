@@ -1,15 +1,19 @@
-var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
+const createError = require("http-errors");
+const express = require("express");
+const path = require("path");
+const cookieParser = require("cookie-parser");
+const logger = require("morgan");
+const mongoose = require("mongoose");
 
-var homeRouter = require("./routes/home");
-var usersRouter = require("./routes/users");
+require("dotenv").config();
 
-var app = express();
+const homeRouter = require("./routes/home");
+const usersRouter = require("./routes/user/users");
+
+const app = express();
 
 // view engine setup
+
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -18,6 +22,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
+
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  })
+  .then(() => {
+    console.log("MongoDB Connected");
+  })
+  .catch(err => {
+    console.log(`Mongo Error: ${err}`);
+  });
 
 app.use("/", homeRouter);
 app.use("/users", usersRouter);
