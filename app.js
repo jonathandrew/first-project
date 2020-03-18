@@ -8,7 +8,7 @@ const fetch = require("fetch");
 
 require("dotenv").config();
 
-const homeRouter = require("./routes/home");
+const homeRouter = require("./routes/home/home");
 const usersRouter = require("./routes/user/users");
 
 const app = express();
