@@ -4,12 +4,12 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const fetch = require("fetch");
 
 require("dotenv").config();
 
 const homeRouter = require("./routes/home/home");
 const usersRouter = require("./routes/user/users");
+const fighterRouter = require("./routes/fighter/fighter");
 
 const app = express();
 
@@ -39,6 +39,7 @@ mongoose
 
 app.use("/", homeRouter);
 app.use("/users", usersRouter);
+app.use("/fighters", fighterRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
