@@ -8,12 +8,14 @@ module.exports = {
     axios
       .get(url)
       .then(info => {
-        let city = info.data.info.birth_city;
-        let fights = info.data.record;
+        let information = info.data.info;
+        let record = info.data.record;
+        let competitor = info.data.competitor;
         // let ranking = info.info;
         console.log("LENGTH...", info.data.info);
         console.log("test test test", info.data.record);
-        res.render("fighters/fighters", { city, fights });
+        console.log("-------", info.data);
+        res.render("fighters/fighters", { information, record, competitor });
         // console.log(info.data.rankings);
       })
       .catch(err => {
