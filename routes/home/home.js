@@ -5,4 +5,5 @@ const homeController = require("./controllers/homeController");
 
 router.get("/", homeController.rankings);
 
+router.post("/:id", (req, res, next) => {});
 module.exports = router;
