@@ -1,7 +1,6 @@
-const User = require("../../models/User");
+const User = require("../models/User");
 const bcrypt = require("bcryptjs");
 const { validationResult } = require("express-validator");
-const faker = require("faker");
 
 module.exports = {
   register: (req, res, next) => {
