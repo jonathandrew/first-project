@@ -15,13 +15,15 @@ module.exports = {
         const newUser = new User();
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
-        newUser.profile.name = req.body.name;
+
+        newUser.username = req.body.username;
         newUser.email = req.body.email;
         newUser.password = hash;
         newUser
           .save()
           .then(user => {
             req.login(user, err => {
+              console.log("hello from line 26 in controller", err);
               if (err) {
                 return res
                   .status(400)
@@ -37,23 +39,5 @@ module.exports = {
           });
       }
     });
-  },
-  updateProfile: (params, id) => {
-    return new Promise((resolve, reject) => {
-      User.findById(id)
-        .then(user => {
-          console.log("hello");
-          if (params.name) user.profile.name = params.name;
-          if (params.email) user.email = params.email;
-          if (params.address) user.address = params.address;
-          return user;
-        })
-        .then(user => {
-          user.save().then(user => {
-            resolve(user);
-          });
-        })
-        .catch(err => reject(err));
-    }).catch(err => reject(err));
   }
 };
