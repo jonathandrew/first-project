@@ -1,7 +1,5 @@
 const axios = require("axios");
 const api_key = process.env.API_KEY;
-const competitor_ID = process.env.COMPETITOR_ID;
-
 module.exports = {
   // fighters: (req, res) => {
   //   console.log(req.params.id);
@@ -28,5 +26,8 @@ module.exports = {
       .catch(err => {
         console.log(err);
       });
+  },
+  mylist: (req, res, next) => {
+    res.render("fighters/mylist");
   }
 };

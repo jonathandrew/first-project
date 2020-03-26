@@ -16,14 +16,14 @@ require("dotenv").config();
 const homeRouter = require("./routes/home/home");
 const usersRouter = require("./routes/user/users");
 const fighterRouter = require("./routes/fighter/fighter");
-const secondHomeRouter = require("./routes/secondHome/secondHome");
-
+// const listofFightersRouter = require("./routes/listOfFighters/listOfFighters");
 const app = express();
 
 // view engine setup
-
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+app.use(express.static(path.join(__dirname, "public")));
+
 app.use(flash());
 app.use(logger("dev"));
 app.use(express.json());
@@ -73,8 +73,7 @@ app.use((req, res, next) => {
 app.use("/", homeRouter);
 app.use("/users", usersRouter);
 app.use("/fighters", fighterRouter);
-app.use("/:_id", secondHomeRouter);
-
+// app.use("/fighters", listofFightersRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

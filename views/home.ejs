@@ -4,7 +4,6 @@
   <body>
     <% ranking.forEach((item, idx) => { %> <%if (idx < 1){%>
     <div class="card" style="width: 18rem;">
-      <img src="..." class="card-img-top" alt="..." />
       <div class="card-body">
         <h5 class="card-title"><%= item.name %></h5>
         <div class="dropdown">
@@ -24,7 +23,7 @@
             <% for( let j = 0; j < item.competitor_rankings.length; j++ ) { %>
             <a
               class="dropdown-item"
-              href="/fighters/<%= item.competitor_rankings[j].competitor.id%>"
+              href="/fighters/single-fighter/<%= item.competitor_rankings[j].competitor.id%>"
             >
               <%= item.competitor_rankings[j].competitor.name %>
             </a>

@@ -1,14 +1,17 @@
  <% include ../partials/header %>
   <body>
-    <h1> <%=  "NAME:" + competitor.name %> </h1>
-    <h1> <%=  "BORN IN:" + information.birth_city %> </h1>
-    <h1> <%=  "FIGHTING OUT OF :" + information.fighting_out_of_city %> </h1>
-    <h1> <%=  "WINS:" + record.wins %> </h1>
-    <h1> <%=  "DRAWS:" + record.draws %> </h1>
-    <h1> <%=  "LOSSES:" + record.losses %> </h1>
+    <div class="jumbotron">
+        <img src="/images/image1.jpeg"  alt="test">
 
+      <h1 class="display-4"><%=  competitor.name%> </h1>
+      <p class="lead"> <%= `WINS ${record.wins}` %>  </p>
+      <p class="lead"> <%= `LOSSES: ${record.losses}` %> </p>
+      <p class="lead"> <%= ` DRAWS: ${record.draws}` %> </p>
 
-
-    
+      <hr class="my-4">
+      <p> <%= `Fighting out of: ${information.fighting_out_of_city}` %> </p>
+      <p> <%= `Born in: ${information.birth_city}` %> </p>
+      <a class="btn btn-primary btn-lg" href="/" role="button">BACK</a>
+    </div>
   </body>
 </html>
