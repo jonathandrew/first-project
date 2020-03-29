@@ -9,9 +9,11 @@ router.get("/single-fighter/:id", fighterController.fighters);
 // router.get("/mylist", fighterController.mylist);
 
 router.get("/mylist/:fighter/:fighter_id", (req, res, next) => {
-  let fighter = req.params.fighter;
-  let fighter_id = req.params.fighter_id;
+  let fighter = req.params.fighters;
+  let fighter_id = req.params.fighteer_id;
   console.log(fighter);
+  console.log(fighter_id);
   res.render("fighters/mylist", { fighter, fighter_id });
 });
+
 module.exports = router;
