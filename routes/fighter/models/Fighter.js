@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
 
 const fighterSchema = new mongoose.Schema({
-  name: { type: String },
-  pob: { type: String },
-  country: { type: String },
-  dob: { type: String },
-  record: {
-    wins: { type: String },
-    losses: { type: String },
-    Draws: { type: String }
-  }
+  favorites: [
+    {
+      name: { type: String, trim: true },
+      fighter_id: { type: String, unique: true }
+    }
+  ]
 });
 
-module.exports = mongoose.model("Fighters", fighterSchema);
+module.exports = mongoose.model("Fighter", fighterSchema);

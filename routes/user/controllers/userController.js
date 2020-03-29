@@ -23,7 +23,7 @@ module.exports = {
           .save()
           .then(user => {
             req.login(user, err => {
-              console.log("hello from line 26 in controller", err);
+              // console.log("hello from line 26 in controller", err);
               if (err) {
                 return res
                   .status(400)

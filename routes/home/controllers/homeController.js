@@ -8,8 +8,8 @@ module.exports = {
       .get(url)
       .then(info => {
         let ranking = info.data.rankings;
-        console.log("LENGTH...", ranking.length);
-        console.log("---------", ranking[0].competitor_rankings[0]);
+        // console.log("LENGTH...", ranking.length);
+        // console.log("---------", ranking[0].competitor_rankings[0]);
         res.render("home", { ranking });
         // console.log(info.data.rankings);
       })

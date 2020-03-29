@@ -1,5 +1,6 @@
 const axios = require("axios");
 const api_key = process.env.API_KEY;
+const User = require("../../user/models/User");
 module.exports = {
   // fighters: (req, res) => {
   //   console.log(req.params.id);
@@ -24,10 +25,18 @@ module.exports = {
         // console.log(info.data.rankings);
       })
       .catch(err => {
-        console.log(err);
+        // console.log(err);
       });
   },
-  mylist: (req, res, next) => {
-    res.render("fighters/mylist");
+  mylist: id => {
+    return new Promise((resolve, reject) => {
+      User.findById(id)
+        .then(info => {
+          resolve(info);
+        })
+        .catch(err => {
+          reject(err);
+        });
+    });
   }
 };
