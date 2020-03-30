@@ -2,7 +2,7 @@
 <html lang="en">
   <% include ./partials/header %>
   <body>
-    <% ranking.forEach((item, idx) => { %> <%if (idx < 1){%>
+    <% ranking.forEach((item, idx,arr) => { %> <%if (idx < /*arr.length*/ 1){%>
     <div class="card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title"><%= item.name %></h5>
@@ -34,5 +34,6 @@
     </div>
 
     <%} }) %>
+    <a href="/fighters/mylist">Mylist</a>
   </body>
 </html>

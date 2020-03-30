@@ -11,6 +11,10 @@
       <p> <%= `Fighting out of: ${information.fighting_out_of_city}` %> </p>
       <p> <%= `Born in: ${information.birth_city}` %> </p>
       <a class="btn btn-primary btn-lg" href="/" role="button">BACK</a>
+      <% if(user){ %>
+<a class="btn btn-primary btn-lg" href="/fighters/mylist/<%= competitor.name %>/<%= competitor.id %>  "
+  role="button">ADD</a>
+     <% } %> 
     </div>
   </body>
 </html>

@@ -1,10 +1,12 @@
-<!-- <% include ../partials/header %>   -->
+<% include ../partials/header %>  
   <body>
     <div class="list-group">
+      <ul>
+      <% for( let i = 0; i < user.length; i++ ) { %>
 
-      <a href="#"><%= fighter %> </a>
-    <%= fighter_id %>
-    <h1>hello</h1>
+      <li><a href = "/fighters/single-fighter/<%= user[i].fighter_id %> "> <%= user[i].fighter %>  </a> </li>
+      <% } %> 
+      </ul>
     </div>
   </body>
 </html>

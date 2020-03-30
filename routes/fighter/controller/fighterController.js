@@ -17,10 +17,12 @@ module.exports = {
         let information = info.data.info;
         let record = info.data.record;
         let competitor = info.data.competitor;
+
         // let ranking = info.info;
         // console.log("LENGTH...", info.data.info);
         // console.log("test test test", info.data.record);
         // console.log("-------", info);
+        console.log(competitor);
         res.render("fighters/fighters", { information, record, competitor });
         // console.log(info.data.rankings);
       })
