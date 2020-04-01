@@ -1,8 +1,6 @@
  <% include ../partials/header %>
   <body>
     <div class="jumbotron">
-        <img src="/images/image1.jpeg"  alt="test">
-
       <h1 class="display-4"><%=  competitor.name%> </h1>
       <p class="lead"> <%= `WINS ${record.wins}` %>  </p>
       <p class="lead"> <%= `LOSSES: ${record.losses}` %> </p>
@@ -15,6 +13,6 @@
 <a class="btn btn-primary btn-lg" href="/fighters/mylist/<%= competitor.name %>/<%= competitor.id %>  "
   role="button">ADD</a>
      <% } %> 
-    </div>
+    </div> 
   </body>
 </html>
