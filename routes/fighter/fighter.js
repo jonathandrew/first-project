@@ -12,6 +12,12 @@ router.get("/mylist/:fighter/:fighter_id", (req, res, next) => {
   let fighter = req.params.fighter;
   let fighter_id = req.params.fighter_id;
   const user = req.user;
+  for (let i = 0; i < user.favorite.length; i++) {
+    const element = user.favorite[i];
+    if (element.fighter_id === fighter_id) {
+      return res.redirect("/");
+    }
+  }
   user.favorite.push({
     fighter: fighter,
     fighter_id: fighter_id
@@ -20,26 +26,26 @@ router.get("/mylist/:fighter/:fighter_id", (req, res, next) => {
     let list = info.favorite;
     // console.log(" mvkldfnsjkv djknbd", info.favorite);
 
-    for (let i = 0; i < list.length; i++) {
-      for (j = i + 1; j < list.length; j++) {
-        if (list[i] === list[j]) {
-          console.log("mosmodmodod", list[j]);
-          // const fighter = list[i].fighter;
-        } else {
-        }
-      }
-      // console.log("mnmnmnmnmnmnmn", list[i].fighter);
+    // for (let i = 0; i < list.length; i++) {
+    //   for (j = i + 1; j < list.length; j++) {
+    //     if (list[i] === list[j]) {
+    //       console.log("mosmodmodod", list[j]);
+    //       // const fighter = list[i].fighter;
+    //     } else {
+    //     }
+    //   }
+    // console.log("mnmnmnmnmnmnmn", list[i].fighter);
 
-      // const words = list.filter((fighters, index) => {
-      // return list.indexOf(fighters) === index;
+    // const words = list.filter((fighters, index) => {
+    // return list.indexOf(fighters) === index;
 
-      // console.log(fighters.fighter, index);
-      // });
-      // console.log(words);
-      // console.log(result)
-      // const list = info.push(info.favorite[i].fighter);
-      // console.log("kdsjnvjkdsnvjks", list);
-    }
+    // console.log(fighters.fighter, index);
+    // });
+    // console.log(words);
+    // console.log(result)
+    // const list = info.push(info.favorite[i].fighter);
+    // console.log("kdsjnvjkdsnvjks", list);
+    // }
     // info.forEach(fighter => {
     // console.lof(fighter.favorite.fighter)
     // });
