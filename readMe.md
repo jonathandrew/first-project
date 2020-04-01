@@ -6,7 +6,8 @@ WORKING PROJECT TO ENABLE USERS TO CREATE A LIST FROM THE ACTIVE FIGHTERS OF UFC
 
 ## ROUTES
 
-/users
+### /users
+
 /users/login
 /users/register
 /fighters
