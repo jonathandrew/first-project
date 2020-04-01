@@ -29,8 +29,7 @@ module.exports = {
                   .status(400)
                   .json({ confirmation: false, message: err });
               } else {
-                res.redirect("/");
-                next();
+                return res.redirect("/");
               }
             });
           })

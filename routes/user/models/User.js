@@ -8,8 +8,8 @@ const UserSchema = new mongoose.Schema({
   // fighter: { type: Schema.Types.ObjectID, ref: "Fighter" }
   favorite: [
     {
-      fighter: { type: String, unique: true },
-      fighter_id: { type: String, unique: true }
+      fighter: String,
+      fighter_id: String
     }
   ]
 });
