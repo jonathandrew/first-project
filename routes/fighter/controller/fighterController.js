@@ -22,23 +22,11 @@ module.exports = {
         // console.log("LENGTH...", info.data.info);
         // console.log("test test test", info.data.record);
         // console.log("-------", info);
-        console.log(competitor);
         res.render("fighters/fighters", { information, record, competitor });
         // console.log(info.data.rankings);
       })
       .catch(err => {
         // console.log(err);
       });
-  },
-  mylist: id => {
-    return new Promise((resolve, reject) => {
-      User.findById(id)
-        .then(info => {
-          resolve(info);
-        })
-        .catch(err => {
-          reject(err);
-        });
-    });
   }
 };

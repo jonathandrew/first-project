@@ -13,6 +13,7 @@ router.get("/register", (req, res) => {
 });
 
 router.post("/register", userValidation, userController.register);
+
 router.get("/login", (req, res) => {
   return res.render("users/login", { errors: req.flash("errors") });
 });
