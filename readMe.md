@@ -8,6 +8,16 @@ WORKING PROJECT TO ENABLE USERS TO CREATE A LIST FROM THE ACTIVE FIGHTERS OF UFC
 
 ### /users
 
+#### /login
+
+#### /register
+
+### /fighters
+
+#### /single-fighter/:fighter_id
+
+#### /mylist
+
 /users/login
 /users/register
 /fighters
