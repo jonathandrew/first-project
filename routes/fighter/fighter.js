@@ -57,11 +57,12 @@ router.get("/mylist/:fighter/:fighter_id", (req, res, next) => {
 });
 router.get("/mylist", (req, res, next) => {
   if (req.user) {
+    const username = req.user.username;
     const user = req.user.favorite;
     // user.filter((value, index, array) => {
     // array[0];
     // })
-    res.render("fighters/mylist", { user });
+    res.render("fighters/mylist", { user, username });
   } else {
     res.redirect("/users/register/");
   }

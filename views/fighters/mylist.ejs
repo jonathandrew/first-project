@@ -3,8 +3,11 @@
     <div class="list-group">
       <ul>
       <% for( let i = 0; i < user.length; i++ ) { %>
-
-      <li><a href = "/fighters/single-fighter/<%= user[i].fighter_id %> "> <%= user[i].fighter %>  </a> </li>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <a href="/fighters/single-fighter/<%= user[i].fighter_id %> " class="btn btn-primary"><%= user[i].fighter %> </a>
+  </div>
+</div>
       <% } %> 
       </ul>
     </div>
